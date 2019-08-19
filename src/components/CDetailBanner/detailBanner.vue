@@ -139,7 +139,8 @@ export default {
       display: block;
       .bigPic {
         img {
-          height: 220px;
+          width: 100%;
+          height: 50%;
         }
       }
       .smallPic {
