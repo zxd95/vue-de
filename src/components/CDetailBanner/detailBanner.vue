@@ -20,12 +20,14 @@
                       </div>
                     </el-col>
                   </template>
-                  <el-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
-                    <div class="bigPic">
-                      <img v-show="image == 1" src="../../assets/images/watch01.png" alt />
-                      <img v-show="image == 2" src="../../assets/images/watch04.png" alt />
-                    </div>
-                  </el-col>
+                  <transition name="slide-fade">
+                    <el-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
+                      <div class="bigPic">
+                        <img v-show="image == 1" src="../../assets/images/watch01.png" alt />
+                        <img v-show="image == 2" src="../../assets/images/watch04.png" alt />
+                      </div>
+                    </el-col>
+                  </transition>
                 </el-row>
               </el-col>
               <el-col :span="11">
@@ -113,6 +115,16 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
 .c-banner {
   .banner {
     @media screen and (max-width: 600px) {
@@ -132,8 +144,16 @@ export default {
       }
       .smallPic {
         .picBox {
+          margin-right: 10px;
           display: inline-block;
           width: 25%;
+          img {
+            transition: all 1s;
+            transition: All 0.4s ease-in-out;
+          }
+          img:hover {
+            transform: scale(1.1);
+          }
         }
       }
     }
@@ -163,6 +183,7 @@ export default {
     margin-bottom: 22px;
     border: 1px solid #686565;
     overflow: hidden;
+    cursor: pointer;
     img {
       transition: all 1s;
       transition: All 0.4s ease-in-out;
@@ -201,5 +222,11 @@ export default {
     padding-top: 92px;
     padding-left: 20px;
   }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
