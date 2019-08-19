@@ -67,9 +67,15 @@ export default {
   text-align: center;
   @media screen and (max-width: 600px) {
     width: 100%;
+    margin-top: 22px;
+    display: inline-block;
+    height: 212px;
   }
   img{
     width: 100%;
+    @media screen and (max-width: 600px) {
+      transform: scale(1.6);
+    }
   }
 }
 .brand {

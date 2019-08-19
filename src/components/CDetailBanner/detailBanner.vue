@@ -1,64 +1,84 @@
 <template>
-  <div class="banner">
-    <el-row :span="24">
-      <el-col :span="20" :offset="2">
-        <div>
-          <el-row>
-            <el-col :span="13">
-              <el-row>
-                <template v-if="!hidden">
-                  <el-col :span="7">
-                    <div class="smallPic">
-                      <div class="picBox" @click="image = 1" :class="{notactive:image == 2}">
-                        <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
+  <div class="c-banner">
+    <div class="banner">
+      <el-row :span="24">
+        <el-col :span="20" :offset="2">
+          <div>
+            <el-row>
+              <el-col :span="13">
+                <el-row>
+                  <template v-if="!hidden">
+                    <el-col :span="7">
+                      <div class="smallPic">
+                        <div class="picBox" @click="image = 1" :class="{notactive:image == 2}">
+                          <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
+                        </div>
+                        <div class="picBox" @click="image = 2" :class="{notactive:image == 1}">
+                          <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
+                        </div>
                       </div>
-                      <div class="picBox" @click="image = 2" :class="{notactive:image == 1}">
-                        <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
-                      </div>
+                    </el-col>
+                  </template>
+                  <el-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
+                    <div class="bigPic">
+                      <img v-show="image == 1" src="../../assets/images/watch01.png" alt />
+                      <img v-show="image == 2" src="../../assets/images/watch04.png" alt />
                     </div>
                   </el-col>
-                </template>
-                <el-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
-                  <div class="bigPic">
-                    <img v-show="image == 1" src="../../assets/images/watch01.png" alt />
-                    <img v-show="image == 2" src="../../assets/images/watch04.png" alt />
+                </el-row>
+              </el-col>
+              <el-col :span="11">
+                <div class="rightTxt" :class="{lineH:!hidden}">
+                  <strong class="priceTxt">$888,888</strong>
+                  <p class="medium">
+                    Livraison gratuite, les taxes seront calculées au
+                  </p>
+                  <span>moment de l'achat</span>
+                  <p class="medium line">Customization lead time 15 days</p>
+                  <p class="bold">CONCEPT DE DESIGN</p>
+                  <p class="line line-pad"></p>
+                  <div class="icon-con">
+                    <span class="icon-item">
+                      <img class="img-trim" src="../../assets/images/wechat.png" alt="">
+                    </span>
+                    <span class="icon-item">
+                      <img class="img-trim" src="../../assets/images/weibo.png" alt="">
+                    </span>
+                    <span class="icon-item">
+                      <img class="img-trim" src="../../assets/images/instagram.png" alt="">
+                    </span>
+                    <span class="icon-item">
+                      <img class="img-trim" src="../../assets/images/facebook.png" alt="">
+                    </span>
+                    <span class="icon-item">
+                      <img class="img-trim" src="../../assets/images/twitter.png" alt="">
+                    </span>
                   </div>
-                </el-col>
-              </el-row>
-            </el-col>
-            <el-col :span="11">
-              <div class="rightTxt" :class="{lineH:!hidden}">
-                <strong class="priceTxt">$888,888</strong>
-                <p class="medium">
-                  Livraison gratuite, les taxes seront calculées au
-                </p>
-                <span>moment de l'achat</span>
-                <p class="medium line">Customization lead time 15 days</p>
-                <p class="bold">CONCEPT DE DESIGN</p>
-                <p class="line line-pad"></p>
-                <div class="icon-con">
-                  <span class="icon-item">
-                    <img class="img-trim" src="../../assets/images/wechat.png" alt="">
-                  </span>
-                  <span class="icon-item">
-                    <img class="img-trim" src="../../assets/images/weibo.png" alt="">
-                  </span>
-                  <span class="icon-item">
-                    <img class="img-trim" src="../../assets/images/instagram.png" alt="">
-                  </span>
-                  <span class="icon-item">
-                    <img class="img-trim" src="../../assets/images/facebook.png" alt="">
-                  </span>
-                  <span class="icon-item">
-                    <img class="img-trim" src="../../assets/images/twitter.png" alt="">
-                  </span>
                 </div>
-              </div>
-            </el-col>
-          </el-row>
+              </el-col>
+            </el-row>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+    <div class="banner-mobile">
+      <el-row>
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+          <div class="bigPic">
+            <img v-show="image == 1" src="../../assets/images/bag01.jpg" alt />
+            <img v-show="image == 2" src="../../assets/images/bag02.jpg" alt />
+          </div>
+        </el-col>
+      </el-row>
+      <div class="smallPic">
+        <div class="picBox" @click="image = 1" :class="{notactive:image == 2}">
+          <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
         </div>
-      </el-col>
-    </el-row>
+        <div class="picBox" @click="image = 2" :class="{notactive:image == 1}">
+          <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -92,6 +112,29 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.c-banner {
+  .banner {
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+  .banner-mobile {
+    @media screen and (max-width: 600px) {
+      display: block;
+      .bigPic {
+        img {
+          height: 220px;
+        }
+      }
+      .smallPic {
+        .picBox {
+          display: inline-block;
+          width: 25%;
+        }
+      }
+    }
+  }
+}
 .smallPic {
   padding-top: 10px;
 }
@@ -151,7 +194,6 @@ export default {
     }
   }
   div.lineH {
-    // line-height: 3;
     padding-top: 92px;
     padding-left: 20px;
   }

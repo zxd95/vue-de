@@ -44,6 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-footer {
+  margin-top: 20px;
   background-color: #f1f1f1;
   .logo {
     padding: 28px 0;
