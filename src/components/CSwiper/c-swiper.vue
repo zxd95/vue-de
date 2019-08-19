@@ -1,10 +1,8 @@
 <template>
   <div class="c-swiper">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="item in swiperList" :key="item.id">
-        <!-- <a @click="handleDetail(item.id)"> -->
-          <img :src="item.imgUrl" />
-        <!-- </a> -->
+      <swiper-slide v-for="item in swiperList" :key="item.rowId">
+        <img :src="item.imgUrl" />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>

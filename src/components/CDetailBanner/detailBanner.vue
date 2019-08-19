@@ -4,37 +4,55 @@
       <el-col :span="20" :offset="2">
         <div>
           <el-row>
-            <el-col :span="12">
+            <el-col :span="13">
               <el-row>
                 <template v-if="!hidden">
-                  <el-col :span="8">
+                  <el-col :span="7">
                     <div class="smallPic">
                       <div class="picBox" @click="image = 1" :class="{notactive:image == 2}">
-                        <img src="../../assets/images/detail2.png" alt />
+                        <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
                       </div>
                       <div class="picBox" @click="image = 2" :class="{notactive:image == 1}">
-                        <img src="../../assets/images/detail2.png" alt />
+                        <img style="display: inherit;" src="../../assets/images/detail2.png" alt />
                       </div>
                     </div>
                   </el-col>
                 </template>
                 <el-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
                   <div class="bigPic">
-                    <img v-show="image == 1" src="../../assets/images/detail1.png" alt />
-                    <img v-show="image == 2" src="../../assets/images/detail1.png" alt />
+                    <img v-show="image == 1" src="../../assets/images/watch01.png" alt />
+                    <img v-show="image == 2" src="../../assets/images/watch04.png" alt />
                   </div>
                 </el-col>
               </el-row>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="11">
               <div class="rightTxt" :class="{lineH:!hidden}">
-                <strong>$888,888</strong>
+                <strong class="priceTxt">$888,888</strong>
                 <p class="medium">
                   Livraison gratuite, les taxes seront calculées au
-                  moment de l'achat
                 </p>
+                <span>moment de l'achat</span>
                 <p class="medium line">Customization lead time 15 days</p>
                 <p class="bold">CONCEPT DE DESIGN</p>
+                <p class="line line-pad"></p>
+                <div class="icon-con">
+                  <span class="icon-item">
+                    <img class="img-trim" src="../../assets/images/wechat.png" alt="">
+                  </span>
+                  <span class="icon-item">
+                    <img class="img-trim" src="../../assets/images/weibo.png" alt="">
+                  </span>
+                  <span class="icon-item">
+                    <img class="img-trim" src="../../assets/images/instagram.png" alt="">
+                  </span>
+                  <span class="icon-item">
+                    <img class="img-trim" src="../../assets/images/facebook.png" alt="">
+                  </span>
+                  <span class="icon-item">
+                    <img class="img-trim" src="../../assets/images/twitter.png" alt="">
+                  </span>
+                </div>
               </div>
             </el-col>
           </el-row>
@@ -74,18 +92,31 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.smallPic {
+  padding-top: 10px;
+}
+.line-pad {
+  padding-top: 72px;
+}
+.icon-con {
+  padding-top: 24px;
+}
+.icon-item {
+  padding-right: 24px;
+}
+.img-trim {
+  transform: scale(0.8);
+}
 .banner {
-  background-color: lightgray;
+  background-color:#f1f1f1;
   padding: 50px 0;
   .picBox {
     background-color: #fff;
-    width: 50%;
-    margin-bottom: 10px;
-    padding: 13px 0;
+    width: 68%;
+    margin-bottom: 22px;
     border: 1px solid #686565;
     overflow: hidden;
     img {
-      // width: 90%;
       transition: all 1s;
       transition: All 0.4s ease-in-out;
     }
@@ -99,30 +130,30 @@ export default {
   .rightTxt {
     text-align: left;
     strong {
-      font-size: 30px;
+      font-size: 34px;
       line-height: inherit;
       display: inline-block;
     }
     .medium {
       font-size: 16px;
-
       line-height: inherit;
-      margin-bottom: 10px;
+      padding-top: 12px;
     }
     .line {
-      padding-bottom: 10px;
-
+      padding-bottom: 22px;
       line-height: inherit;
       border-bottom: 1px solid #999;
     }
     .bold {
-      font-size: 20px;
+      font-size: 18px;
       line-height: inherit;
+      padding-top: 22px;
     }
   }
   div.lineH {
-    line-height: 3;
-    padding: 0 5%;
+    // line-height: 3;
+    padding-top: 92px;
+    padding-left: 20px;
   }
 }
 </style>

@@ -1,16 +1,21 @@
 <template>
   <div class="c-product">
-    <template v-for="item in formatProductData">
-      <div class="brand" :key="item.a">
-        <img class="img-trim" src="../../assets/images/brand.png">
+    <!-- <template v-for="item in formatProductData"> -->
+    <template>  
+      <div class="brand">
+        <img class="img-trim" src="../../assets/images/brand01.png">
       </div>
-      <c-product-list :key="item.b"></c-product-list>
+      <c-product-list></c-product-list>
+      <div style="margin-top: 36px;"></div>
+      <c-product-lists></c-product-lists>
     </template>
   </div>
 </template>
 
 <script>
 import CProductList from '@/components/CProductList/c-productlist'
+import CProductLists from '@/components/CProductList/c-productlists'
+
 export default {
   name: 'c-product',
   props: {
@@ -27,18 +32,15 @@ export default {
     }
   },
   components: {
-    CProductList
+    CProductList,
+    CProductLists
   },
   methods: {
-    formatProductList () {
-      // TODO:
-      let data = this.productList
-      let formatData = []
-
-      data.forEach(item => {
-        debugger
-      })
-    }
+    // formatProductList () {
+    //   let data = this.productList
+    //   let formatData = []
+    //   data.forEach(item => {})
+    // }
   }
 }
 </script>

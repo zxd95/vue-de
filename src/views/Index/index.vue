@@ -3,7 +3,8 @@
     <c-header></c-header>
     <c-swiper :swiperList="swiperList"></c-swiper>
     <div class="c-container">
-      <c-product :productList="productList"></c-product>
+      <!-- <c-product :productList="productList"></c-product> -->
+      <c-product></c-product>
     </div>
     <c-footer></c-footer>
   </div>
@@ -14,6 +15,7 @@ import CHeader from '@/components/CHeader/c-header'
 import CSwiper from '@/components/CSwiper/c-swiper'
 import CProduct from '@/components/CProduct/c-product'
 import CFooter from '@/components/CFooter/c-footer'
+import { getBannerApi } from '@/api/index'
 
 export default {
   name: 'index',
@@ -30,18 +32,20 @@ export default {
     }
   },
   mounted () {
-    this.getSwiperList()
-    this.getProductList()
+    // this.getSwiperList()
+    // this.getProductList()
   },
   methods: {
-    getSwiperList() { // 获取轮播图
-      this.$axios.get().then(res => {
-        if (res.code === 0) {
-          this.swiperList = res.data
+    // 获取轮播图
+    getSwiperList() {
+      getBannerApi().then(res => {
+        if (res.message === 'success') {
+          this.swiperList = res.result
         }
       })
     },
-    getProductList() { // 获取产品
+    // 获取产品
+    getProductList() { 
       this.$axios.get().then(res => {
         if (res.code === 0) {
           this.productList = res.data

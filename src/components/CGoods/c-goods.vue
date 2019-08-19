@@ -3,7 +3,7 @@
     <div class="container">
     <div class="columns is-desktop">
       <el-row :gutter="10" v-if="!this.layoutFlag">
-        <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="item in goodsList" :key="item.id">
+        <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" v-for="item in goodsList" :key="item.id">
           <div class="column"  @click="handleDetail(item.id)">
             <div class="goods-item">
               <img :src="item.imgUrl">
@@ -55,6 +55,9 @@ export default {
       },{
         id: '0003',
         imgUrl: require('../../assets/images/watch03.png')
+      },{
+        id: '0004',
+        imgUrl: require('../../assets/images/watch04.png')
       }]
     }
   },

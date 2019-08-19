@@ -62,7 +62,7 @@ export default {
     padding-left: 18px;
   }
   .img-trim {
-    transform: scale(0.9);
+    transform: scale(0.8);
     @media screen and (max-width: 600px) {
       transform: scale(0.7);
     }

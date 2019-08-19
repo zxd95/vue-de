@@ -4,7 +4,7 @@
       <!-- <el-row>
         <el-col :span='16' :offset="4"> -->
             <div class="poster-container">
-              <img src="../../assets/images/bag01.jpg">
+              <img src="../../assets/images/bag02.jpg">
             </div>
         <!-- </el-col>
       </el-row> -->

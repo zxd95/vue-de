@@ -4,11 +4,13 @@
     <CdetailBanner :goodsDetailData="goodsDetailData"/>
     <div class="poster-container">
       <img src="../../assets/images/con.jpg">
-      <img src="../../assets/images/con.jpg"> 
+    </div>
+    <div class="brand">
+      <img class="img-trim" src="../../assets/images/brand01.png">
     </div>
     <el-row>
       <el-col :span='16' :offset="4">
-          <c-goods class="goods-con" :layoutFlag="layoutFlag"></c-goods>
+        <c-goods class="goods-con" :layoutFlag="layoutFlag"></c-goods>
       </el-col>
     </el-row>
     <c-footer></c-footer>
@@ -38,7 +40,7 @@ export default {
   created () {
   },
   mounted () {
-    this.getGoodsList()
+    // this.getGoodsList()
   },
   methods: {
     getGoodsList () {
@@ -59,6 +61,7 @@ export default {
 .poster-container {
   width: 100%;
   margin: 0 auto;
+  padding-top: 18px;
   padding-bottom: 12px;
   font-size: 0;
   text-align: center;
@@ -67,6 +70,19 @@ export default {
   }
   img{
     width: 100%;
+  }
+}
+.brand {
+  width: 100%;
+  padding: 12px 0 26px 22px;
+  @media screen and (max-width: 600px) {
+    padding: 0 0 0 12px;
+  }
+  .img-trim {
+    transform: scale(0.72);
+    @media screen and (max-width: 600px) {
+      transform: scale(0.5);
+    }
   }
 }
 </style>
