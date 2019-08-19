@@ -7,7 +7,8 @@
             <el-row>
               <el-col :span="13">
                 <el-row>
-                  <template v-if="!hidden">
+                  <!-- <template v-if="!hidden"> -->
+                  <template>
                     <el-col :span="7">
                       <div class="smallPic">
                         <div class="picBox" @click="image = 1" :class="{notactive:image == 2}">
@@ -119,6 +120,9 @@ export default {
     }
   }
   .banner-mobile {
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
     @media screen and (max-width: 600px) {
       display: block;
       .bigPic {
