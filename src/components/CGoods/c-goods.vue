@@ -1,29 +1,25 @@
 <template>
   <div class="c-goods">
-    <div class="container">
-    <div class="columns is-desktop">
-      <el-row :gutter="10" v-if="!this.layoutFlag">
-        <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" v-for="item in goodsList" :key="item.id">
-          <div class="column col"  @click="handleDetail(item.id)">
-            <div class="goods-item">
-              <img :src="item.imgUrl">
-              <span class="btn">EN SAVOIR PLUS</span>
-            </div>
+    <el-row v-if="!this.layoutFlag">
+      <el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6" v-for="item in goodsList" :key="item.id">
+        <div class="column col" @click="handleDetail(item.id)">
+          <div class="goods-item">
+            <img :src="item.imgUrl">
+            <span class="btn">{{ item.priceTitle }}</span>
           </div>
-        </el-col>
-      </el-row>
-      <el-row :gutter="10" v-else>
-        <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" v-for="item in goodsList" :key="item.id">
-          <div class="column col" @click="handleDetail(item.id)">
-            <div class="goods-item">
-              <img :src="item.imgUrl">
-              <span class="btn">EN SAVOIR PLUS</span>
-            </div>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row v-else>
+      <el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6" v-for="item in goodsList" :key="item.id">
+        <div class="column col" @click="handleDetail(item.id)">
+          <div class="goods-item">
+            <img :src="item.imgUrl">
+            <span class="btn">{{ item.priceTitle }}</span>
           </div>
-        </el-col>
-      </el-row>
-    </div>
-    </div>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -37,27 +33,41 @@ export default {
         return false
       }
     }
-    // goodsList: {
-    //   type: Array,
-    //   default () {
-    //     return []
-    //   }
-    // }
   },
   data () {
     return {
       goodsList: [{
-        id: '0001',
-        imgUrl: require('../../assets/images/watch01.png')
+        id: '1',
+        imgUrl: require('../../assets/images/differencePic01.png'),
+        priceTitle: 'Skull 3'
       },{
-        id: '0002',
-        imgUrl: require('../../assets/images/watch02.png')
+        id: '2',
+        imgUrl: require('../../assets/images/differencePic02.png'),
+        priceTitle: 'Skull 2'
       },{
-        id: '0003',
-        imgUrl: require('../../assets/images/watch03.png')
+        id: '3',
+        imgUrl: require('../../assets/images/differencePic03.png'),
+        priceTitle: 'Skull'
       },{
-        id: '0004',
-        imgUrl: require('../../assets/images/watch04.png')
+        id: '4',
+        imgUrl: require('../../assets/images/differencePic04.png'),
+        priceTitle: 'The Exploded Dragon'
+      },{
+        id: '5',
+        imgUrl: require('../../assets/images/differencePic05.png'),
+        priceTitle: 'The Exploded Dragon'
+      },{
+        id: '10',
+        imgUrl: require('../../assets/images/sun01.png'),
+        priceTitle: 'Sun Flower 2'
+      },{
+        id: '11',
+        imgUrl: require('../../assets/images/sun02.png'),
+        priceTitle: 'Sun Flower'
+      },{
+        id: '9',
+        imgUrl: require('../../assets/images/street04.png'),
+        priceTitle: 'Racing Green'
       }]
     }
   },
@@ -83,6 +93,7 @@ export default {
       this.$router.push({
         path: `/detail/${id}`
       })
+      location.reload()
     }
   }
 }
@@ -92,34 +103,60 @@ export default {
 .col {
   cursor: pointer;
   .goods-item {
+    img {
+      padding: 15px;
+    }
     @media screen and (max-width: 600px) {
-      padding-top: 20px;
       box-shadow: 0 0 10px 0 rgba(150, 108, 108, 0.1);
     }
   }
   .btn {
+    width: 190px;
     display: inline-block;
     position: relative;
-    margin: 20px 0;
-    padding: 4px 30px;
+    margin: 0px 0 20px 0;
+    padding: 4px 0;
     border: 1px solid #332c2b;
+    @media screen and (max-width: 1300px) {
+      display: inline-block;
+      position: relative;
+      padding: 2px 6px;
+      border: 1px solid #332c2b;
+      max-width: 188px;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+      display: inline-block;
+      position: relative;
+      border: 1px solid #332c2b;
+      max-width: 140px;
+    }
   }
 }
 .col:hover {
   .goods-item {
+    overflow: hidden;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     img {
+      padding: 15px;
+      display: inline-block;
       transform: scale(1.04);
       transition: all 1s;
       transition: All 0.4s ease-in-out;
     }
     .btn {
+      width: 190px;
       display: inline-block;
       position: relative;
-      margin: 20px 0;
-      padding: 4px 30px;
+      margin: 0px 0 20px 0;
+      padding: 4px 0;
       border: 1px solid #332c2b;
-      cursor: pointer;
+      @media screen and (max-width: 1000px) {
+        display: inline-block;
+        position: relative;
+        padding: 2px 6px;
+        border: 1px solid #332c2b;
+      }
     }
     .btn:before {
       position: absolute;
@@ -131,6 +168,9 @@ export default {
       background: #332c2b;
       left: 0;
       z-index: -1;
+      @media screen and (max-width: 600px) {
+        height: 26px;
+      }
     }
     .btn:hover {
       color: white;
@@ -140,69 +180,5 @@ export default {
       transition: 0.4s all ease;
     }
   }
-  // img {
-  //   transform: scale(1.04);
-  //   transition: all 1s;
-  //   transition: All 0.4s ease-in-out;
-  // }
-  // .btn {
-  //   display: inline-block;
-  //   position: relative;
-  //   margin: 20px 0;
-  //   padding: 4px 30px;
-  //   border: 1px solid #332c2b;
-  //   cursor: pointer;
-  // }
-  // .btn:before {
-  //   position: absolute;
-  //   top: 0px;
-  //   content: '';
-  //   width: 0;
-  //   height: 32px;
-  //   transition: 0.4s all ease;
-  //   background: #332c2b;
-  //   left: 0;
-  //   z-index: -1;
-  // }
-  // .btn:hover {
-  //   color: white;
-  // }
-  // .btn:hover:before {
-  //   width: 100%;
-  //   transition: 0.4s all ease;
-  // }
 }
-// img {
-//   transition: all 1s;
-//   transition: All 0.4s ease-in-out;
-// }
-// img:hover {
-//   transform: scale(1.02);
-// }
-// .btn {
-//   display: inline-block;
-//   position: relative;
-//   margin: 20px 0;
-//   padding: 4px 30px;
-//   border: 1px solid #332c2b;
-//   cursor: pointer;
-// }
-// .btn:before {
-//   position: absolute;
-//   top: 0px;
-//   content: '';
-//   width: 0;
-//   height: 32px;
-//   transition: 0.4s all ease;
-//   background: #332c2b;
-//   left: 0;
-//   z-index: -1;
-// }
-// .btn:hover {
-//   color: white;
-// }
-// .btn:hover:before {
-//   width: 100%;
-//   transition: 0.4s all ease;
-// }
 </style>

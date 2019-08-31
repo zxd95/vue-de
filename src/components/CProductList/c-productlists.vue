@@ -1,28 +1,33 @@
 <template>
   <div class="c-productlist">
     <div>
-      <!-- <el-row>
-        <el-col :span='16' :offset="4"> -->
-            <div class="poster-container">
-              <img src="../../assets/images/bag02.jpg">
-            </div>
-        <!-- </el-col>
-      </el-row> -->
-      <el-row>
-        <el-col :span='16' :offset="4">
-            <c-goods class="goods-con"></c-goods>
-        </el-col>
-      </el-row>
+      <div class="poster-container">
+        <img src="../../assets/images/bag03.jpg">
+      </div>
+      <div class="goods">
+        <el-row>
+          <el-col :span='16' :offset="4">
+            <c-goods-sun class="goods-con"></c-goods-sun>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="goods-mobile">
+        <el-row>
+          <el-col>
+            <c-goods-sun class="goods-con"></c-goods-sun>
+          </el-col>
+        </el-row>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import CGoods from '@/components/CGoods/c-goods'
+import CGoodsSun from '@/components/CGoods/c-goods-sun'
 export default {
-  name: 'c-productlist',
+  name: 'c-productlists',
   components: {
-    CGoods
+    CGoodsSun
   },
   props: {
     formatProductData: {
@@ -39,10 +44,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.c-productlist {
+  .goods-mobile {
+    display: none;
+  }
+  @media screen and (max-width: 700px) {
+    .goods {
+      display: none;
+    }
+    .goods-mobile {
+      display: block;
+    }
+  }
+}
 .poster-container {
-  width: 76%;
+  width: 68%;
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   font-size: 0;
   text-align: center;
   @media screen and (max-width: 600px) {

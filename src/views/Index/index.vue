@@ -3,7 +3,6 @@
     <c-header></c-header>
     <c-swiper :swiperList="swiperList"></c-swiper>
     <div class="c-container">
-      <!-- <c-product :productList="productList"></c-product> -->
       <c-product></c-product>
     </div>
     <c-footer></c-footer>
@@ -32,8 +31,6 @@ export default {
     }
   },
   mounted () {
-    // this.getSwiperList()
-    // this.getProductList()
   },
   methods: {
     // 获取轮播图

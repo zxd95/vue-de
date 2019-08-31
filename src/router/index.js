@@ -9,11 +9,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
+      name: 'index',
       component: Index
     }, {
       path: '/detail/:id',
-      name: 'Detail',
+      name: 'detail',
       component: Detail
     }
   ]

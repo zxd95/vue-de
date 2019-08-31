@@ -17,6 +17,10 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(ElementUI)
 Vue.prototype.$axios = axios
 
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

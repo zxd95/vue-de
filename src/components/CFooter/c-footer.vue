@@ -5,12 +5,12 @@
     </div>
     <div class="container">
       <div class="icon-con">
-        <span class="icon-item">
+        <!-- <span class="icon-item">
           <img class="img-trim" src="../../assets/images/wechat.png" alt="">
-        </span>
-        <span class="icon-item">
+        </span> -->
+        <!-- <span class="icon-item">
           <img class="img-trim" src="../../assets/images/weibo.png" alt="">
-        </span>
+        </span> -->
         <span class="icon-item">
           <img class="img-trim" src="../../assets/images/instagram.png" alt="">
         </span>
@@ -50,6 +50,7 @@ export default {
     padding: 28px 0;
     transform: scale(0.72);
     @media screen and (max-width: 600px) {
+      padding: 0;
       transform: scale(0.42);
     }
   }
@@ -114,7 +115,7 @@ export default {
   .input-con {
     display: inline-block;
     position: relative;
-    right: 158px;
+    right: 38px;
     padding: 8px 90px 8px 10px;
     border: 2px solid #332c2b;
     @media screen and (max-width: 600px) {
@@ -124,7 +125,7 @@ export default {
   }
   .input-submit {
     position: relative;
-    right: 164px;
+    right: 44px;
     display: inline-block;
     padding: 8px 10px;
     border: 2px solid #332c2b;
@@ -137,8 +138,8 @@ export default {
   }
   .text-con {
     display: inline-block;
-    position: absolute;
-    right: 382px;
+    position: relative;
+    top: 12px;
     font-size: 14px;
     @media screen and (max-width: 600px) {
       position: static;

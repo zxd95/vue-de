@@ -2,9 +2,9 @@
   <div class="c-header">
     <div class="void"></div>
     <div class="logo">
-      <a href="#">
+      <router-link to="/">
         <img class="img-trim" src="../../assets/images/logo.png">
-      </a>
+      </router-link>
     </div>
     <div class="burger">
       <span class="burger-icon">

@@ -1,6 +1,5 @@
 <template>
   <div class="c-product">
-    <!-- <template v-for="item in formatProductData"> -->
     <template>  
       <div class="brand">
         <img class="img-trim" src="../../assets/images/brand01.png">
@@ -8,6 +7,8 @@
       <c-product-list></c-product-list>
       <div style="margin-top: 36px;"></div>
       <c-product-lists></c-product-lists>
+      <div style="margin-top: 36px;"></div>
+      <c-product-listss></c-product-listss>
     </template>
   </div>
 </template>
@@ -15,6 +16,7 @@
 <script>
 import CProductList from '@/components/CProductList/c-productlist'
 import CProductLists from '@/components/CProductList/c-productlists'
+import CProductListss from '@/components/CProductList/c-productlistss'
 
 export default {
   name: 'c-product',
@@ -33,14 +35,10 @@ export default {
   },
   components: {
     CProductList,
-    CProductLists
+    CProductLists,
+    CProductListss
   },
   methods: {
-    // formatProductList () {
-    //   let data = this.productList
-    //   let formatData = []
-    //   data.forEach(item => {})
-    // }
   }
 }
 </script>

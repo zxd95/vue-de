@@ -13,12 +13,6 @@
 export default {
   name: 'c-swiper',
   props: {
-    // swiperList: {
-    //   type: Array,
-    //   default () {
-    //     return []
-    //   }
-    // }
   },
   data () {
     return {
@@ -34,11 +28,15 @@ export default {
       swiperList: [
         {
           id: '0001',
-          imgUrl: require('../../assets/images/swiper02.png')
+          imgUrl: require('../../assets/images/swiper01.png')
         },
         {
           id: '0002',
           imgUrl: require('../../assets/images/swiper02.png')
+        },
+        {
+          id: '0003',
+          imgUrl: require('../../assets/images/swiper03.png')
         }
       ]
     }
